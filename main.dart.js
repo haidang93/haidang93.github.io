@@ -67053,7 +67053,7 @@ j=j.ap(0,l,s).db.K(r).f
 q=$.I
 q=(q==null?$.I=new E.an():q).ap(0,l,s).fr
 q=q.gk(q)
-q=M.az(l,l,C.j,l,l,new S.bt(l,X.f7(K.alt(C.S,C.dU,0.4),C.jj,new L.dp("images/home3.jpg",l,l)),l,l,l,l,C.B),l,j.a.b-q,l,l,l,l,l)
+q=M.az(l,l,C.j,l,l,new S.bt(l,X.f7(K.alt(C.S,C.dU,0.4),C.jj,new L.dp("assets/images/home3.jpg",l,l)),l,l,l,l,C.B),l,j.a.b-q,l,l,l,l,l)
 j=$.I
 j=(j==null?$.I=new E.an():j).ap(0,l,s).fy
 p=$.I
