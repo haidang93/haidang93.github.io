@@ -1,6 +1,6 @@
 {
-    "name": "my_cv_website",
-    "short_name": "my_cv_website",
+    "name": "mywebsite",
+    "short_name": "mywebsite",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
