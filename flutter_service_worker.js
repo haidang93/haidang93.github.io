@@ -4,19 +4,20 @@ const TEMP = 'flutter-temp-cache';
 const CACHE_NAME = 'flutter-app-cache';
 const RESOURCES = {
   "version.json": "caa5c9212f882fbb1aeee16f4471b486",
-"index.html": "5e26f3878514d07c2cb9743e41f2d6ef",
-"/": "5e26f3878514d07c2cb9743e41f2d6ef",
-"main.dart.js": "1cfe12268e745b7f7b4ff6581cd854b5",
+"index.html": "fbb4d2e4671dc23f42fb4e8710514231",
+"/": "fbb4d2e4671dc23f42fb4e8710514231",
+"main.dart.js": "c4576243d8220fb6fb9413548b599fb0",
 "Icon-192.png": "8a5dc68327d61fbc1be4af8cc348ebe1",
 "favicon.png": "5dcef449791fa27946b3d35ad8803796",
 "icons/Icon-192.png": "8a5dc68327d61fbc1be4af8cc348ebe1",
 "icons/Icon-512.png": "259293af11a96c16391fbd98a063b525",
 "manifest.json": "24d2619bc2a413a103dac790eadc6ae9",
-"assets/AssetManifest.json": "0e6ac27054e8a8ad08a81e01be9d19c9",
-"assets/NOTICES": "6a9c802a369b1d99256a03c4a3e63852",
+"assets/AssetManifest.json": "473df8958875445c9245b9cd68aa8382",
+"assets/NOTICES": "be3e2d3b52c13a442ebc35569d31ead0",
 "assets/FontManifest.json": "dc3d03800ccca4601324923c0b1d6d57",
 "assets/packages/cupertino_icons/assets/CupertinoIcons.ttf": "6d342eb68f170c97609e9da345464e5e",
-"assets/fonts/MaterialIcons-Regular.otf": "4e6447691c9509f7acdbf8a931a85ca1",
+"assets/packages/wakelock_web/assets/no_sleep.js": "7748a45cd593f33280669b29c2c8919a",
+"assets/fonts/MaterialIcons-Regular.otf": "1288c9e28052e028aba623321f7826ac",
 "assets/assets/images/port.png": "1ad1c12d3907b2bb8d8a36227ea9286b",
 "assets/assets/images/me.png": "184588fe660d26981893dc5831b4f5a5",
 "assets/assets/images/b1859bdac7d42d4a0a5a673bc4265564.png": "7867ff84cee1745f1fd2190fe8cc6ce9",
@@ -47,6 +48,7 @@ const RESOURCES = {
 "assets/assets/images/home3.jpg": "cf90b054c97ed261738157dbef5de980",
 "assets/assets/images/home2.jpg": "705248b76f9493355cf43bf81690e75e",
 "assets/assets/images/bb.jpg": "e06b0a7b3718787dfa104398b7e189c2",
+"assets/assets/images/bamboo_loading.zip": "542b9ee80a7cf7f67cd63a1b4ea512d5",
 "assets/assets/images/dart.png": "a5f8d09431d001159c31ee430314ace7",
 "assets/assets/images/sqlite.png": "7b56054624a5a696b16e445eb5ce5ac1",
 "Icon-512.png": "259293af11a96c16391fbd98a063b525"
@@ -67,7 +69,7 @@ self.addEventListener("install", (event) => {
   return event.waitUntil(
     caches.open(TEMP).then((cache) => {
       return cache.addAll(
-        CORE.map((value) => new Request(value, {'cache': 'reload'})));
+        CORE.map((value) => new Request(value + '?revision=' + RESOURCES[value], {'cache': 'reload'})));
     })
   );
 });
