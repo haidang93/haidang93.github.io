@@ -3,21 +3,20 @@ const MANIFEST = 'flutter-app-manifest';
 const TEMP = 'flutter-temp-cache';
 const CACHE_NAME = 'flutter-app-cache';
 const RESOURCES = {
-  "version.json": "dded0d75b16ab1383d2edbfb56704728",
-"index.html": "84967c7e67e67873f4ce5a1d3500c78f",
-"/": "84967c7e67e67873f4ce5a1d3500c78f",
-"main.dart.js": "b1a9343fca70183d6556783b5547d95d",
-"favicon.png": "5dcef449791fa27946b3d35ad8803796",
+  "version.json": "6c36ac009148836db91a1b2998e52616",
+"index.html": "2ceee9c9413aa75d55b472ad8f1b5d79",
+"/": "2ceee9c9413aa75d55b472ad8f1b5d79",
+"main.dart.js": "7e0ff8a2b9f2603905f63273ace91e5c",
+"favicon2.png": "5dcef449791fa27946b3d35ad8803796",
+"favicon.png": "0830ed66a3a1517393ca5a21fb464fd4",
 "icons/Icon-192.png": "ac9a721a12bbc803b44f645561ecb1e1",
-"icons/Icon-maskable-192.png": "c457ef57daa1d16f64b27b786ec2ea3c",
-"icons/Icon-maskable-512.png": "301a7604d45b3e739efc881eb04896ea",
 "icons/Icon-512.png": "96e752610906ba2a93c65f8abe1645f1",
-"manifest.json": "c7ea155065c453df33df089e2f4e9418",
+"manifest.json": "3d059fc7d7f1357eed6db095b56d8f6c",
 "assets/AssetManifest.json": "99f4ba6b36b95c79b950fe07d05650b1",
-"assets/NOTICES": "b14e65c6fffa681bf7ec3db7078d61d9",
+"assets/NOTICES": "079c3068fe5516c7ff4d1adf026190f2",
 "assets/FontManifest.json": "dc3d03800ccca4601324923c0b1d6d57",
 "assets/packages/cupertino_icons/assets/CupertinoIcons.ttf": "6d342eb68f170c97609e9da345464e5e",
-"assets/fonts/MaterialIcons-Regular.otf": "4e6447691c9509f7acdbf8a931a85ca1",
+"assets/fonts/MaterialIcons-Regular.otf": "1288c9e28052e028aba623321f7826ac",
 "assets/assets/images/no_avatar.png": "778f6070f96ca8f1dc4950c1b2b6f451",
 "assets/assets/images/home.jpg": "458f1327bc446eedc2f6ea51b68ad5b3",
 "assets/assets/images/hidepass.png": "fec605af0b0597363970e092e3a0da24",
@@ -86,7 +85,7 @@ self.addEventListener("install", (event) => {
   return event.waitUntil(
     caches.open(TEMP).then((cache) => {
       return cache.addAll(
-        CORE.map((value) => new Request(value, {'cache': 'reload'})));
+        CORE.map((value) => new Request(value + '?revision=' + RESOURCES[value], {'cache': 'reload'})));
     })
   );
 });
